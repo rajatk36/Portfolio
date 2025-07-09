@@ -1,0 +1,10 @@
+.spider-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
