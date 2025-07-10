@@ -21,7 +21,7 @@ const Contact=()=>{
     const handleSubmit=async(e)=>{
       e.preventDefault();
       try{
-        await fetch('https://portfolio-54uy.onrender.com/contact',{
+        await fetch(`${import.meta.env.RENDER_BACKEND_URL}/contact`,{
           method:'POST',
           headers:{
             'content-type':'application/json'
