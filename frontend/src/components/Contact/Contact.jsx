@@ -21,7 +21,7 @@ const Contact=()=>{
     const handleSubmit=async(e)=>{
       e.preventDefault();
       try{
-        await fetch('http://localhost:5000/contact',{
+        await fetch(`${process.env.REACT_APP_BACKEND}/contact`,{
           method:'POST',
           headers:{
             'content-type':'application/json'
