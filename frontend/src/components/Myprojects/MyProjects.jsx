@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'Portfolio Website',
     image: '/images/portfolio.jpg', 
-    codeLink: 'https://github.com/yourname/uix-portfolio',
+    codeLink: 'https://github.com/rajatk36/Portfolio',
   },
   {
     title: 'Mental Health Agent',
