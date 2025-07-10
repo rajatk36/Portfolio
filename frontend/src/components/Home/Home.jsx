@@ -4,9 +4,9 @@ import './Home.css';
 
 const Home = () => {
   
-  const lnkedin_link = process.env.REACT_APP_LINKEDIN;
-  const instagram_link = process.env.REACT_APP_GITHUB;
-  const github_link = process.env.REACT_APP_GITHUB;
+   const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-1996/";
+  const instagram_link = "https://www.instagram.com/rajatkumar_007/";
+  const github_link = "https://github.com/rajatkumar007";
   
   return (
       <div className="home">
