@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import './MyProjects.css';
+import './myprojects.css';
 import { Autoplay } from 'swiper/modules';
 
 const projects = [
