@@ -9,7 +9,7 @@ This is my personal developer portfolio built using:
 
 ## 🔗 Live Links
 
-- **Portfolio**: [your-frontend-url.vercel.app](https://portfolio-five-ecru-50.vercel.app)
+- **Portfolio**: [your-frontend-url.vercel.app](https://portfolio-five-ecru-50.vercel.app/)
 - **API**: [your-backend-url.onrender.com](https://portfolio-54uy.onrender.com)
 
 ## 📬 Features
@@ -21,9 +21,17 @@ This is my personal developer portfolio built using:
 
 ## ⚙️ Setup Instructions
 
+
+### Frontend
+```bash
+cd frontend
+npm install
+#Update .env with your Links
+npm run dev
+```
 ### Backend
 ```bash
 cd backend
 npm install
-# Add .env with MONGO_URI and PORT
+# Update .env with MONGO_URI and PORT
 node server.js
