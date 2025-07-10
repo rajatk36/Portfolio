@@ -4,9 +4,9 @@ import './Home.css';
 
 const Home = () => {
   
-   const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-1996/";
+   const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-76b020261/";
   const instagram_link = "https://www.instagram.com/rajatkumar_007/";
-  const github_link = "https://github.com/rajatkumar007";
+  const github_link = "https://github.com/rajatk36";
   
   return (
       <div className="home">
