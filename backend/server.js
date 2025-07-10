@@ -14,7 +14,7 @@ app.use(express.json());
 // ROUTES
 app.use('/contact', contactRoutes);
 
-app.get('https://portfolio-54uy.onrender.com/zic'(req,res)=>{
+app.get('https://portfolio-54uy.onrender.com/zic',(req,res)=>{
   res.send('zac');
 });
 //mongo
