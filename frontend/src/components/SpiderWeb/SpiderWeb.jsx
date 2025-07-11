@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './spider.css';
+import './SpiderWeb.css';
 
 const SpiderWeb = () => {
   const canvasRef = useRef(null);
