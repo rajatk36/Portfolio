@@ -1,157 +1,128 @@
-// 📁 src/components/SpiderWeb/SpiderWeb.jsx
 import React, { useEffect, useRef } from 'react';
-import './SpiderWeb.css';
+import './spider.css';
 
 const SpiderWeb = () => {
   const canvasRef = useRef(null);
+  const bannerRef = useRef(null);
+  const dots = useRef([]);
+  const arrayColors = ['#eee', '#545454', '#596d91', '#bb5a68', '#696541'];
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const parent = canvas.parentElement;
-
-    // Responsive canvas
-    const resize = () => {
-      canvas.width = parent.offsetWidth;
-      canvas.height = parent.offsetHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
+    const banner = bannerRef.current;
 
     const ctx = canvas.getContext('2d');
-    let width = canvas.width;
-    let height = canvas.height;
 
-    // Grid settings
-    const gridRows = 10;
-    const gridCols = 18;
-    const points = [];
-    const mouse = { x: width / 2, y: height / 2 };
+    const resizeCanvas = () => {
+      canvas.width = banner.offsetWidth;
+      canvas.height = banner.offsetHeight;
+    };
 
-    class Point {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.originX = x;
-        this.originY = y;
-        this.size = 1.1;
-      }
-      draw() {
+    const initDots = () => {
+  const width = window.innerWidth;
+
+  let dotCount = 50; // default for large screens
+
+  if (width <= 1200) dotCount = 40;
+  if (width <= 992) dotCount = 35;
+  if (width <= 768) dotCount = 30;
+  if (width <= 480) dotCount = 25;
+
+  dots.current = [];
+  for (let i = 0; i < dotCount; i++) {
+    dots.current.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 3 + 5,
+      color: arrayColors[Math.floor(Math.random() * arrayColors.length)]
+    });
+  }
+};
+
+
+    const drawDots = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dots.current.forEach(dot => {
+        ctx.fillStyle = dot.color;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = "#00fff7";
-        ctx.shadowColor = "#a259ff";
-        ctx.shadowBlur = 6;
+        ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0;
-      }
-      update() {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const force = Math.min(120 / (dist || 1), 2.5);
-        const angle = Math.atan2(dy, dx);
-        this.x += Math.cos(angle) * force * 0.5;
-        this.y += Math.sin(angle) * force * 0.5;
-        // Spring back to grid
-        this.x += (this.originX - this.x) * 0.07;
-        this.y += (this.originY - this.y) * 0.07;
-        this.draw();
-      }
-    }
-
-    const createPoints = () => {
-      points.length = 0;
-      width = canvas.width;
-      height = canvas.height;
-      const xGap = width / (gridCols + 1);
-      const yGap = height / (gridRows + 1);
-      for (let i = 1; i <= gridCols; i++) {
-        for (let j = 1; j <= gridRows; j++) {
-          points.push(new Point(i * xGap, j * yGap));
-        }
-      }
-    };
-
-    const connectPoints = () => {
-      // Neon gradient
-      const grad = ctx.createLinearGradient(0, 0, width, height);
-      grad.addColorStop(0, "#00f0ff");
-      grad.addColorStop(0.5, "#a259ff");
-      grad.addColorStop(1, "#00ff99");
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = 0.5;
-      for (let i = 0; i < points.length; i++) {
-        for (let j = i + 1; j < points.length; j++) {
-          const dx = points[i].x - points[j].x;
-          const dy = points[i].y - points[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < Math.min(width, height) / 10) {
-            ctx.beginPath();
-            ctx.moveTo(points[i].x, points[i].y);
-            ctx.lineTo(points[j].x, points[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-    };
-
-    const animate = () => {
-      width = canvas.width = parent.offsetWidth;
-      height = canvas.height = parent.offsetHeight;
-      ctx.clearRect(0, 0, width, height);
-      if (points.length === 0) createPoints();
-      points.forEach(p => p.update());
-      connectPoints();
-      requestAnimationFrame(animate);
-    };
-
-    // Opacity control
-    const handleMouseMove = e => {
-      canvas.style.opacity = 1;
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    };
-    const handleMouseLeave = () => {
-      canvas.style.opacity = 0;
-    };
-
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseleave", handleMouseLeave);
-
-    canvas.addEventListener("click", () => {
-      points.forEach(p => {
-        p.x += Math.random() * 30 - 15;
-        p.y += Math.random() * 30 - 15;
       });
+    };
+
+    const handleMouseMove = (event) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawDots();
+      const mouse = {
+        x: event.pageX - banner.getBoundingClientRect().left,
+        y: event.pageY - banner.getBoundingClientRect().top
+      };
+
+      dots.current.forEach(dot => {
+        const distance = Math.sqrt((mouse.x - dot.x) ** 2 + (mouse.y - dot.y) ** 2);
+        if (distance < 200) {
+          ctx.strokeStyle = dot.color;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(dot.x, dot.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      });
+    };
+
+    const handleMouseOut = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawDots();
+    };
+
+    resizeCanvas();
+    initDots();
+    drawDots();
+
+    banner.addEventListener('mousemove', handleMouseMove);
+    banner.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initDots();
+      drawDots();
     });
 
-    createPoints();
-    animate();
-
-    // Cleanup
     return () => {
-      window.removeEventListener('resize', resize);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      banner.removeEventListener('mousemove', handleMouseMove);
+      banner.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
+  
+  const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-1996/";
+  const instagram_link = "https://www.instagram.com/rajatkumar_007/";
+  const github_link = "https://github.com/rajatkumar007";
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="spider-canvas"
-      style={{
-        opacity: 0,
-        transition: "opacity 0.4s",
-        pointerEvents: "auto",
-        position: "absolute",
-        inset: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 1
-      }}
-    />
+    <main> 
+    <div className="banner" ref={bannerRef}>
+    <canvas id="dotsCanvas" ref={canvasRef}></canvas> {/* ✅ canvas closed properly */}
+    
+    <div className="text-area">
+      <h2 className='head2'>Hello🙋‍♂️there,</h2>
+      <h1 className='head1'>I'm a web Developer</h1>
+      <p className='para'>I build things for web</p>
+      <div className="social-icons">
+        <a href={lnkedin_link} target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-linkedin"></i>
+        </a>
+        <a href={instagram_link} target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-instagram"></i>
+        </a>
+        <a href={github_link} target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
   );
 };
 
