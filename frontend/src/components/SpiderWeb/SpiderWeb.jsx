@@ -50,6 +50,38 @@ const SpiderWeb = () => {
       });
     };
 
+    const handleTouchMove = (event) => {
+  const touch = event.touches[0];
+  const mouse = {
+    x: touch.pageX - banner.getBoundingClientRect().left,
+    y: touch.pageY - banner.getBoundingClientRect().top,
+  };
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawDots();
+
+  dots.current.forEach(dot => {
+    const distance = Math.sqrt((mouse.x - dot.x) ** 2 + (mouse.y - dot.y) ** 2);
+    if (distance < 169) {
+      ctx.strokeStyle = dot.color;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(dot.x, dot.y);
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.stroke();
+    }
+  });
+};
+
+const handleTouchEnd = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawDots();
+};
+
+     banner.addEventListener('touchmove', handleTouchMove);
+     banner.addEventListener('touchend', handleTouchEnd);
+
+
+    
     const handleMouseMove = (event) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawDots();
