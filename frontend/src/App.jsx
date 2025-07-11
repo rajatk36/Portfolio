@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <section id="home"><Home /></section>
+      <section id="home"><SpiderWeb /></section>
       <section id="about" className="section-with-background">
        
         <AboutMe />
