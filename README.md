@@ -36,5 +36,5 @@ npm install
 # Update .env with MONGO_URI and PORT
 node server.js
 ```
-![Portfolio Screenshot]([https://your-uploaded-image-link.png](https://drive.google.com/file/d/1E6UAklVx7sEXJjeYtivVkAVnrOUyAoy-/view?usp=drive_link))
+![Portfolio Screenshot]('Portfolio_thumbnail.png')
 
