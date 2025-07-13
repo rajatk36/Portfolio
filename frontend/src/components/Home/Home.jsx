@@ -1,10 +1,29 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Home.css';
+import SpiderWeb from '../SpiderWeb/SpiderWeb.jsx';
 
 const Home = () => {
+
+ //swap content or component i have used this to maintain responsive interaction. SpiderWeb.jsx has a problem when viewd in mobile works great in desktop
   
-   const lnkedin_link = `${import.meta.env.VITE_APP_LINKEDIN}`;
+ const [IsDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 512);
+    checkIsDesktop(); // initial check
+    window.addEventListener('resize', checkIsDesktop);
+
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  if (IsDesktop) {
+    return ( 
+      <Spiderweb/>
+    );
+  }
+  
+  const lnkedin_link = `${import.meta.env.VITE_APP_LINKEDIN}`;
   const instagram_link = `${import.meta.env.VITE_APP_INSTAGRAM}`;
   const github_link = `${import.meta.env.VITE_APP_GITHUB}`;
   
