@@ -10,7 +10,7 @@ const Home = () => {
  const [IsDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 512);
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 768);
     checkIsDesktop(); // initial check
     window.addEventListener('resize', checkIsDesktop);
 
