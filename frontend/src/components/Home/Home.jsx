@@ -1,25 +1,7 @@
 import React, { useState, useEffect } from'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Home.css';
-import Spiderweb from '../SpiderWeb/SpiderWeb.jsx'
 
-const Home = () => {
-
- const [IsDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 768);
-    checkIsDesktop(); // initial check
-    window.addEventListener('resize', checkIsDesktop);
-
-    return () => window.removeEventListener('resize', checkIsDesktop);
-  }, []);
-
-  if (IsDesktop) {
-    return ( 
-      <Spiderweb/>
-    );
-  }
 
   const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-1996/";
   const instagram_link = "https://www.instagram.com/rajatkumar_007/";
