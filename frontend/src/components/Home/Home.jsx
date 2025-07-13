@@ -1,7 +1,7 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Home.css';
-import SpiderWeb from '../SpiderWeb/SpiderWeb.jsx';
+import SpiderWeb from '../SpiderWeb/SpiderWeb.jsx'
 
 const Home = () => {
 
@@ -19,7 +19,7 @@ const Home = () => {
 
   if (IsDesktop) {
     return ( 
-      <Spiderweb/>
+      <SpiderWeb/>
     );
   }
   
