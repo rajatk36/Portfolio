@@ -5,7 +5,7 @@ import Spiderweb from '../SpiderWeb/SpiderWeb.jsx'
 
 const Home = () => {
 
- const [IsDesktop, setIsDesktop] = useState(false);
+ const [IsDesktop, setIsDesktop] = useState(false);  // this is because the canvas effect is not interacting well in lower screen resolutions touch movement also interacts with scroll and canvas effect so for now i am using canvas effect only for desktops
 
   useEffect(() => {
     const checkIsDesktop = () => setIsDesktop(window.innerWidth > 768);
