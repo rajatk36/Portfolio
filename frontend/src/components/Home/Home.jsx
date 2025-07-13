@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Home.css';
-import SpiderWeb from '../SpiderWeb/SpiderWeb.jsx'
+import Spiderweb from '../SpiderWeb/SpiderWeb.jsx'
 
 const Home = () => {
 
- //swap content or component i have used this to maintain responsive interaction. SpiderWeb.jsx has a problem when viewd in mobile works great in desktop
-  
  const [IsDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 512);
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 768);
     checkIsDesktop(); // initial check
     window.addEventListener('resize', checkIsDesktop);
 
@@ -19,18 +17,17 @@ const Home = () => {
 
   if (IsDesktop) {
     return ( 
-      <SpiderWeb/>
+      <Spiderweb/>
     );
   }
-  
-  const lnkedin_link = `${import.meta.env.VITE_APP_LINKEDIN}`;
-  const instagram_link = `${import.meta.env.VITE_APP_INSTAGRAM}`;
-  const github_link = `${import.meta.env.VITE_APP_GITHUB}`;
-  
+
+  const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-1996/";
+  const instagram_link = "https://www.instagram.com/rajatkumar_007/";
+  const github_link = "https://github.com/rajatkumar007";
   return (
       <div className="home">
         <div className="text-area">
-          <h2>Hello 👋,</h2>
+          <h1>Hello 👋,</h1>
           <h1> I'm a web Developer</h1>
           <p className='description'>I build things for web</p>
           <div className="social-icons">
