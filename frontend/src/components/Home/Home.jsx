@@ -1,11 +1,29 @@
 import React, { useState, useEffect } from'react';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './Home.css';
+import Spiderweb from '../SpiderWeb/SpiderWeb.jsx'
 
+const Home = () => {
 
-  const lnkedin_link = `${import.meta.env.VITE_APP_LINKEDIN}`;
-  const instagram_link = `${import.meta.env.VITE_APP_INSTAGRAM}`;
-  const github_link = `${import.meta.env.VITE_APP_GITHUB}`;
+ const [IsDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => setIsDesktop(window.innerWidth > 768);
+    checkIsDesktop(); // initial check
+    window.addEventListener('resize', checkIsDesktop);
+
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  if (IsDesktop) {
+    return ( 
+      <Spiderweb/>
+    );
+  }
+
+  const lnkedin_link = "https://www.linkedin.com/in/rajat-kumar-1996/";
+  const instagram_link = "https://www.instagram.com/rajatkumar_007/";
+  const github_link = "https://github.com/rajatkumar007";
   return (
       <div className="home">
         <div className="text-area">
