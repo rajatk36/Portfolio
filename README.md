@@ -36,5 +36,5 @@ npm install
 # Update .env with MONGO_URI and PORT
 node server.js
 ```
-![Portfolio View](./thumbnail.mp4)
+![Portfolio View](./thumbnail.gif)
 
