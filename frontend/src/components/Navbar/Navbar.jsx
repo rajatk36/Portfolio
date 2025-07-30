@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 const resume_link = `${import.meta.env.VITE_RESUME_LINK}`;
 const GoToLink =() => {
-  window.open("resume_link",'_blank');
+  window.open({resume_link},'_blank');
 };
 
   return (
