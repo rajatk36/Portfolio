@@ -17,6 +17,10 @@ const Navbar = () => {
     }
   };
 
+const GoToLink =() => {
+  window.open("https://drive.google.com/file/d/1iNEgMyrAaNlVw0S1oLlklFb9488qkYKF/view?usp=sharing",'_blank');
+};
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -30,7 +34,9 @@ const Navbar = () => {
           </button>
           
         ))}
-        
+        <button className="nav-button" onclick={GoToLink}>
+          Resume
+        </button>
       </nav>
        <button
       className="nav-button email-icon"
