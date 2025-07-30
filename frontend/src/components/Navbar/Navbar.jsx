@@ -16,9 +16,9 @@ const Navbar = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+const resume_link = `${import.meta.env.VITE_RESUME_LINK}`;
 const GoToLink =() => {
-  window.open("https://drive.google.com/file/d/1iNEgMyrAaNlVw0S1oLlklFb9488qkYKF/view?usp=sharing",'_blank');
+  window.open("resume_link",'_blank');
 };
 
   return (
