@@ -34,7 +34,7 @@ const GoToLink =() => {
           </button>
           
         ))}
-        <button className="nav-button" onclick={GoToLink}>
+        <button className="nav-button" onClick={GoToLink}>
           Resume
         </button>
       </nav>
