@@ -14,6 +14,11 @@ const projects = [
     title: 'Mental Health Agent',
     image: '/images/mentalhealth.jpg',
     codeLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT',
+  },
+  {
+    title: 'Billing App',
+    image: '/images/Billing_app.jpg',
+    codeLink: 'https://github.com/rajatk36/Billing-App',
   }
   
 ];
