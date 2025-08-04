@@ -19,6 +19,11 @@ const projects = [
     title: 'Billing App',
     image: '/images/Billing_app.jpg',
     codeLink: 'https://github.com/rajatk36/Billing-App',
+  },
+  {
+    title: 'ToDo App',
+    image: '/images/ToDo_app.jpg',
+    codeLink: 'https://github.com/rajatk36/ToDo-App',
   }
   
 ];
