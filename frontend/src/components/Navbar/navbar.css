@@ -40,7 +40,7 @@
  
 }
 
-@media(max-width: 512px) {
+@media(max-width: 564px) {
   .nav-button {
     padding: 0.5rem 0.5rem;
     font-size: 0.8rem;
