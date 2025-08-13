@@ -1,4 +1,5 @@
 import React from "react";
+import {useState,useEffect} from "react"
 import { MdEmail } from "react-icons/md";
 import "./navbar.css";
 
@@ -10,6 +11,16 @@ const Menu = [
 ];
 
 const Navbar = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 380);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 380);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -21,10 +32,15 @@ const GoToLink =() => {
   window.open(resume_link,'_blank');
 };
 
+const responsiveMenu = ismobile
+  ? Menu.filter((item)=> item.name !== "Home")
+  : Menu;
+
+  
   return (
     <header className="header">
       <nav className="navbar">
-        {Menu.map((item, index) => (
+        {responsiveMenu.map((item, index) => (
           <button
             key={index}
             className="nav-button"
