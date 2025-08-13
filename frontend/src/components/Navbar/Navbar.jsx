@@ -33,7 +33,7 @@ const GoToLink =() => {
 };
 
 const responsiveMenu = ismobile
-  ? Menu.filter((item)=> item.name !== "Home")
+  ? Menu.filter((item)=> item.name !== "About")
   : Menu;
 
   
