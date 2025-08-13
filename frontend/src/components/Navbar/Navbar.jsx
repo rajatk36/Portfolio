@@ -55,9 +55,9 @@ const responsiveMenu = ismobile
 
   
   return (
-    <header className={`header ${isVisible ? "show" : "hide"}`>
+<header className={`header ${isVisible ? "show" : "hide"}`}>
       <nav className="navbar">
-        {responsiveMenu.map((item, index) => (
+        {filteredMenu.map((item, index) => (
           <button
             key={index}
             className="nav-button"
@@ -67,16 +67,21 @@ const responsiveMenu = ismobile
           </button>
           
         ))}
-        <button className="nav-button" onClick={GoToLink}>
-          Resume
-        </button>
+       <button className="nav-button" onClick={goToLink}>
+        Resume
+        </button> 
       </nav>
-       <button
+       
+       
+      
+      <button
       className="nav-button email-icon"
       onClick={()=>scrollToSection("contact")}>
       <MdEmail size={20} />
       Hire Me
     </button>
+     
+    
     </header>
   );
 };
