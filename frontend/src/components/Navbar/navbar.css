@@ -1,9 +1,21 @@
-
 .header{
   display: flex;
   flex-direction: row;
   background-color: #8121d0;
   justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header.hide {
+  transform: translateY(-100%); 
+}
+
+.header.show {
+  transform: translateY(0); 
 }
 .navbar {
   display: flex;
@@ -59,11 +71,13 @@
     padding-left: 0.2rem;
   }
   .nav-button{
-    padding: 0.5rem 0 rem;
+    padding: 0.25rem 0.1 rem;
   }
   .nav-button.email-icon{
     margin-left: 0.1rem;
     gap: 0.1rem;
+    font-size: 11.8px;
   }
 }
+
 
