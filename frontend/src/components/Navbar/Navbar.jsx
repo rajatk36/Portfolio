@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MdEmail } from "react-icons/md";
 import "./navbar.css";
 
