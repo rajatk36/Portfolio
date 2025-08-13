@@ -10,6 +10,25 @@ const Menu = [
 ];
 
 const Navbar = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < lastScrollY) {
+        // Scrolling up → show navbar
+        setIsVisible(true);
+      } else {
+        // Scrolling down → hide navbar
+        setIsVisible(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+  
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -22,7 +41,7 @@ const GoToLink =() => {
 };
 
   return (
-    <header className="header">
+    <header className={`header ${isVisible ? "show" : "hide"}`}>
       <nav className="navbar">
         {Menu.map((item, index) => (
           <button
