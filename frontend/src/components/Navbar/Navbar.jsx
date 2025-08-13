@@ -57,7 +57,7 @@ const responsiveMenu = ismobile
   return (
 <header className={`header ${isVisible ? "show" : "hide"}`}>
       <nav className="navbar">
-        {filteredMenu.map((item, index) => (
+        {responsiveMenu.map((item, index) => (
           <button
             key={index}
             className="nav-button"
