@@ -11,15 +11,32 @@ const Menu = [
 ];
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 380);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 374);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 380);
+      setIsMobile(window.innerWidth <= 374);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < lastScrollY) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
   
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -38,7 +55,7 @@ const responsiveMenu = ismobile
 
   
   return (
-    <header className="header">
+    <header className={`header ${isVisible ? "show" : "hide"}`>
       <nav className="navbar">
         {responsiveMenu.map((item, index) => (
           <button
