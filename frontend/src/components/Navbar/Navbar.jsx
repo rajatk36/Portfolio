@@ -6,7 +6,7 @@ const Menu = [
   { name: "Home", id: "home" },
   { name: "About", id: "about" },
   { name: "Projects", id: "projects" },
-  
+
 ];
 
 const Navbar = () => {
@@ -16,6 +16,10 @@ const Navbar = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+const resume_link = `${import.meta.env.VITE_RESUME_LINK}`;
+const GoToLink =() => {
+  window.open(resume_link,'_blank');
+};
 
   return (
     <header className="header">
@@ -28,9 +32,11 @@ const Navbar = () => {
           >
             {item.name}
           </button>
-          
+
         ))}
-        
+        <button className="nav-button" onClick={GoToLink}>
+          Resume
+        </button>
       </nav>
        <button
       className="nav-button email-icon"
