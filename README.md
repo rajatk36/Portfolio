@@ -9,8 +9,8 @@ This is my personal developer portfolio built using:
 
 ## 🔗 Live Links
 
-- **Portfolio**: (https://portfolio-five-ecru-50.vercel.app/)
-- **API**: (https://portfolio-54uy.onrender.com)
+- **FRONTEND**: (https://portfolio-five-ecru-50.vercel.app/)
+- **BACKEND**: (https://portfolio-54uy.onrender.com)
 
 ## 📬 Features
 
