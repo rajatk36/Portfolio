@@ -9,21 +9,25 @@ const projects = [
     title: 'Portfolio Website',
     image: '/images/portfolio.jpg', 
     codeLink: 'https://github.com/rajatk36/Portfolio',
+    projectLink: 'https://portfolio-five-ecru-50.vercel.app/'
   },
   {
     title: 'Mental Health Agent',
     image: '/images/mentalhealth.jpg',
     codeLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT',
+    projectLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT'
   },
   {
-    title: 'Billing App',
+    title: 'SysManager',
     image: '/images/Billing_app.jpg',
     codeLink: 'https://github.com/rajatk36/SysManager',
+    projectLink: 'https://sys-manager.vercel.app/'
   },
   {
     title: 'ToDo App',
     image: '/images/ToDo_app.jpg',
     codeLink: 'https://github.com/rajatk36/ToDo-App',
+    projectLink: 'https://github.com/rajatk36/ToDo-App'
   }
   
 ];
@@ -41,7 +45,7 @@ const MyProjects = () => {
 >        {projects.map((project, index) => (
           <SwiperSlide key={index} style={{ width: '260px' }} >
             <div className="project-card">
-              <img src={project.image} alt={project.title} className="project-image" />
+              <img src={project.image} alt={project.title} className="project-image" onClick={() => window.open(project.projectLink, "_blank")}/>
               <div className="project-info">
                 <h3>{project.title}</h3>
                 <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="code-button">
