@@ -19,15 +19,15 @@ const projects = [
   },
   {
     title: 'SysManager',
-    image: '/images/Billing_app.jpg',
+    image: '/images/sysmanager.png',
     codeLink: 'https://github.com/rajatk36/SysManager',
     projectLink: 'https://sys-manager.vercel.app/'
   },
   {
-    title: 'ToDo App',
-    image: '/images/ToDo_app.jpg',
-    codeLink: 'https://github.com/rajatk36/ToDo-App',
-    projectLink: 'https://github.com/rajatk36/ToDo-App'
+    title: 'Tic-Tac-Toe',
+    image: '/images/tictactoe.png',
+    codeLink: 'https://github.com/rajatk36/Tic-Tac-Toe',
+    projectLink: 'https://tic-tac-toe-phi-tan.vercel.app/'
   },
   {
     title: 'Spotify clone',
