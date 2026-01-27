@@ -28,6 +28,12 @@ const projects = [
     image: '/images/ToDo_app.jpg',
     codeLink: 'https://github.com/rajatk36/ToDo-App',
     projectLink: 'https://github.com/rajatk36/ToDo-App'
+  },
+  {
+    title: 'Spotify clone',
+    image: '/images/spotify_clone.png',
+    codeLink: 'https://github.com/rajatk36/Spotify-Clone',
+    projectLink:'https://spotify-clone-liard.vercel.app/'
   }
   
 ];
