@@ -5,11 +5,11 @@ import Spiderweb from '../SpiderWeb/SpiderWeb.jsx'
 
 const Home = () => {
 
- const [IsDesktop, setIsDesktop] = useState(false);  // this is because the canvas effect is not interacting well in lower screen resolutions touch movement also interacts with scroll and canvas effect so for now i am using canvas effect only for desktops
+ const [IsDesktop, setIsDesktop] = useState(false); 
 
   useEffect(() => {
     const checkIsDesktop = () => setIsDesktop(window.innerWidth > 768);
-    checkIsDesktop(); // initial check
+    checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
 
     return () => window.removeEventListener('resize', checkIsDesktop);
@@ -26,11 +26,11 @@ const Home = () => {
   const github_link = `${import.meta.env.VITE_APP_GITHUB}`;
   return (
       <div className="home">
-        <div className="text-area">
-          <h1>Hello 👋,</h1>
-          <h1> I'm a web Developer</h1>
-          <p className='description'>I build things for web</p>
-          <div className="social-icons">
+        <div className='home-text-mob'>
+          <h2 className='mob-head1'>Hello there,</h2>
+          <h1 className='mob-head2'>I'm a web Developer</h1>
+          <p className='para'>I build things for web</p>
+          <div className="social-icons-mob">
             <a href={lnkedin_link} target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin"></i>
             </a>

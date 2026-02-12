@@ -1,4 +1,4 @@
-// 📁 src/components/AboutMe.jsx
+
 import React from 'react';
 import 'devicon/devicon.min.css';
 import './aboutme.css';
@@ -20,22 +20,36 @@ const AboutMe = () => {
   return (
     <div className="main" >
         <div className="about-text">
+          
           <h1 className='about-title'>About Me</h1>
           <p className="about-description">
-           As A Web Developer, I Am Responsible For Designing And Developing Web Pages. My Primary Focus Is To Create Responsive, User-Friendly Experiences That Meet The Needs Of A Diverse Online Audience.
+           I am a software engineer who enjoys building fast, intuitive, and reliable web applications with a background in IT from Delhi Technological University.
           </p>
-      </div>
-       <div className="skills-section">
-      <h1 className="skills-title">My Skills</h1>
-      <p className='skills-title1'>Technologies I've been working with recently      </p>
-      <ul className="skills-grid">
-        {skills.map(skill => (
-          <li key={skill.name} title={skill.name} className="skill-card">
-            <i className={skill.icon} aria-label={skill.name}></i>
-          </li>
-        ))}
-      </ul>
+        </div>
+    <div className='profile-card'> 
+       <p className='pc-1'>Available for work</p>
+       <div className='header-profile'>
+          <div className='pc'>
+          <h1 className='pc-2'>Rajat </h1>
+          <h1 className='pc-22'>Kumar</h1>
+          </div>
+          <div className='profile'>
+            <img src="./images/profile.jpeg" alt="profile"  className="profile-img"/>
+          </div>
+       </div>
+       <p className='pc-3'>I create real, working products from idea to launch, making sure they are fast, reliable, and ready to grow.</p>
     </div>
+        <div className="skills-section">
+          <h1 className="skills-title">My Skills</h1>
+          <p className='skills-title1'>Technologies I've been working with recently      </p>
+          <ul className="skills-grid">
+            {skills.map(skill => (
+              <li key={skill.name} title={skill.name} className="skill-card">
+                <i className={skill.icon} aria-label={skill.name}></i>
+              </li>
+            ))}
+          </ul>
+      </div>
     </div>
   );
 };

@@ -7,21 +7,19 @@ import MyProjects from './components/Myprojects/MyProjects.jsx';
 import Contact from './components/Contact/Contact.jsx';
 
 function App() {
+  
   return (
     <div className="App">
       <Navbar />
-
       <section id="home"><Home /></section>
       <section id="about" className="section-with-background">
-       
-        <AboutMe />
+      <AboutMe />
       </section>
-
       <section id="projects" className="section-with-background">
-        <MyProjects />
+      <MyProjects />
       </section>
-
       <section id="contact"><Contact /></section>
+      
     </div>
   );
 }

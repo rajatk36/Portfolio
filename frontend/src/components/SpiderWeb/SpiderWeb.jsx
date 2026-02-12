@@ -4,7 +4,7 @@ import './SpiderWeb.css';
 const SpiderWeb = () => {
   const canvasRef = useRef(null);
   const bannerRef = useRef(null);
-  const dots = useRef([]);
+  /*const dots = useRef([]);
   const arrayColors = ['#eee', '#545454', '#596d91', '#bb5a68', '#696541'];
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const handleTouchEnd = () => {
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
-  
+  */
    const lnkedin_link = `${import.meta.env.VITE_APP_LINKEDIN}`;
   const instagram_link = `${import.meta.env.VITE_APP_INSTAGRAM}`;
   const github_link = `${import.meta.env.VITE_APP_GITHUB}`;
@@ -134,10 +134,10 @@ const handleTouchEnd = () => {
   return (
     <main> 
     <div className="banner" ref={bannerRef}>
-    <canvas id="dotsCanvas" ref={canvasRef}></canvas> {/* ✅ canvas closed properly */}
+    <canvas id="dotsCanvas" ref={canvasRef}></canvas> 
     
     <div className="text-area">
-      <h2 className='head2'>Hello🙋‍♂️there,</h2>
+      <h2 className='head2'>Hello there,</h2>
       <h1 className='head1'>I'm a web Developer</h1>
       <p className='para'>I build things for web</p>
       <div className="social-icons">
@@ -150,8 +150,10 @@ const handleTouchEnd = () => {
         <a href={github_link} target="_blank" rel="noopener noreferrer">
           <i className="fab fa-github"></i>
         </a>
+      
       </div>
     </div>
+    
   </div>
 </main>
 

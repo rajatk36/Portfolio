@@ -1,14 +1,10 @@
 main {
-  font-family: Poppins;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
-  background-color: #331c52; 
-  background-image:
-    
-    radial-gradient(
-      at 50% 50%, #2d1b44, #1a0d2f 90%
-    );
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-top: 3rem;
 }
 
 ::-webkit-scrollbar{
@@ -52,18 +48,25 @@ h1, h2, h3, h4, h5, h6,p,a{
   gap: 1rem;
   margin: 1rem 1rem;
   
-}
+} /**/
 .social-icons a {
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-decoration: none;
-  background-image: linear-gradient(to right, #89a5df, #e46e7f, #e8e191);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   display: inline-block;
   transition: transform 0.3s ease;
   
 }
-
+.fa-instagram{
+  background-image: linear-gradient(to right, #89a5df, #e46e7f, #e8e191);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-linkedin{
+  color: rgba(36, 36, 191, 0.89);
+}
+.fa-github{
+  background-color: #252525;
+}
 .social-icons a:hover {
   transform: scale(1.2);
 }
@@ -86,28 +89,20 @@ h1, h2, h3, h4, h5, h6,p,a{
     
 }
 .head1{
-    --to: left;
+    
     font-size: 3.6em;
     font-weight: bold;
-    background-image: linear-gradient(
-        to var(--to), #89a5df, #e46e7f, #e8e191
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #08D9D6;
     text-transform: uppercase;
     line-height: 1em;
 
 }
 .head2{
     
-    --to: left;
+    
     font-size: 2rem;
     font-weight: bold;
-    background-image: linear-gradient(
-        to var(--to), #89a5df, #e46e7f, #e8e191
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #EDEDCE;
     text-transform: uppercase;
     line-height: 1em;
 
@@ -115,21 +110,15 @@ h1, h2, h3, h4, h5, h6,p,a{
 
 }
 .para{
-    font-size: 1.25rem;
-    --to: left;
-    background-image: linear-gradient(
-        to var(--to), #89a5df, #e46e7f, #e8e191
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    color: #EDEDCE; 
+    margin-top: 10px;
     text-transform: uppercase;
     line-height: 1em;
 }
 
 
-h1.right{
-    --to: right;
-}
+
 
 
 

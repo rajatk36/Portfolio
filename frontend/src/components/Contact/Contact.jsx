@@ -40,45 +40,44 @@ return(
 <section className="contact">
   <div className="contact-text">
         <h1 >Let's Discuss</h1>
-        <h1>On Something <span>Cool </span>Together</h1>
-       <div className="temp-text">
-          <p className="text-4">I'm interested in...</p>
-          <div className="tags-container">
-             {interests.map((interest, index) => (
-                    <span className="tag-item" key={index}>
-                        {interest}
-                    </span>
-              ))}
-          </div>
-       </div>                 
+        <h1>On Something <span className='spanf'>Cool </span>Together</h1>
+        
+       <div className='loader'></div>             
   </div> 
             
             
   <div className="form-container" >
         <form className="contact-form" onSubmit={handleSubmit}>
-                  <input
+                 
+                 <div className='inputWrapper'>
+                    <input  className='textInput'
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                  />
-                  <input
+                    />
+                 </div>
+                 <div className='inputWrapper'>
+                    <input className='textInput'
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Your email"
                     required
-                  />
-                  <textarea
+                    />
+                 </div>
+                 <div className='inputWrapper'>
+                   <textarea 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Your message"
                     required
-                  />
+                  /> 
+                 </div>
             <button type="submit">Submit</button>
         </form>
 

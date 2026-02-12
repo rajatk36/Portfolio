@@ -6,16 +6,10 @@ import { Autoplay } from 'swiper/modules';
 
 const projects = [
   {
-    title: 'Portfolio Website',
-    image: '/images/portfolio.jpg', 
-    codeLink: 'https://github.com/rajatk36/Portfolio',
-    projectLink: 'https://portfolio-five-ecru-50.vercel.app/'
-  },
-  {
-    title: 'Mental Health Agent',
-    image: '/images/mentalhealth.jpg',
-    codeLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT',
-    projectLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT'
+    title: 'Spotify clone',
+    image: '/images/spotify_clone.png',
+    codeLink: 'https://github.com/rajatk36/Spotify-Clone',
+    projectLink:'https://spotify-clone-liard.vercel.app/'
   },
   {
     title: 'SysManager',
@@ -24,18 +18,31 @@ const projects = [
     projectLink: 'https://sys-manager.vercel.app/'
   },
   {
+    title: 'CRUD Application',
+    image: '/images/CRUD.png',
+    codeLink: 'https://github.com/rajatk36/CRUD',
+    projectLink:'https://crud-app-frontend.vercel.app/'
+  },
+  {
     title: 'Tic-Tac-Toe',
     image: '/images/tictactoe.png',
     codeLink: 'https://github.com/rajatk36/Tic-Tac-Toe',
     projectLink: 'https://tic-tac-toe-phi-tan.vercel.app/'
   },
-  {
-    title: 'Spotify clone',
-    image: '/images/spotify_clone.png',
-    codeLink: 'https://github.com/rajatk36/Spotify-Clone',
-    projectLink:'https://spotify-clone-liard.vercel.app/'
-  }
   
+  
+  {
+    title: 'Mental Health Agent',
+    image: '/images/mentalhealth.jpg',
+    codeLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT',
+    projectLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT'
+  },
+  {
+    title: 'Portfolio Website',
+    image: '/images/portfolio.jpg', 
+    codeLink: 'https://github.com/rajatk36/Portfolio',
+    projectLink: 'https://portfolio-five-ecru-50.vercel.app/'
+  }
 ];
 
 const MyProjects = () => {
