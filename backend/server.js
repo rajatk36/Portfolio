@@ -18,11 +18,12 @@ app.get('/zic',(req,res)=>{
 // ROUTES
 app.use('/contact', contactRoutes);
 
+const databseURI = process.env.MONGO_URI;
 
 //mongo
 mongoose.set("strictQuery",false)
 mongoose
-  .connect(process.env.MONGO_URI, { tlsAllowInvalidCertificates: true })
+  .connect(databseURI, { tlsAllowInvalidCertificates: true })
   .then(() => {
     app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
   })

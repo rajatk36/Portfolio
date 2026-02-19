@@ -21,7 +21,7 @@ const projects = [
     title: 'CRUD Application',
     image: '/images/CRUD.png',
     codeLink: 'https://github.com/rajatk36/CRUD',
-    projectLink:'https://crud-app-frontend.vercel.app/'
+    projectLink:'https://crud-5p46z4d0l-rajat-kumars-projects-9d07c678.vercel.app/'
   },
   {
     title: 'Tic-Tac-Toe',
@@ -32,8 +32,8 @@ const projects = [
   
   
   {
-    title: 'Mental Health Agent',
-    image: '/images/mentalhealth.jpg',
+    title: 'Ai Chatbot',
+    image: '/images/chatbot.jpg',
     codeLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT',
     projectLink: 'https://github.com/rajatk36/HYBRID-FUSION-MENTAL-HEALTH-CHAT-SUPPORT-AI-AGENT'
   },
