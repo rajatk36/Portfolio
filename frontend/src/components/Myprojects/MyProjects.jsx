@@ -21,7 +21,7 @@ const projects = [
     title: 'CRUD Application',
     image: '/images/CRUD.png',
     codeLink: 'https://github.com/rajatk36/CRUD',
-    projectLink:'https://crud-5p46z4d0l-rajat-kumars-projects-9d07c678.vercel.app/'
+    projectLink:'https://crud-tau-virid.vercel.app'
   },
   {
     title: 'Tic-Tac-Toe',
