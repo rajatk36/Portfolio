@@ -6,6 +6,18 @@ import { Autoplay } from 'swiper/modules';
 
 const projects = [
   {
+    title: 'SkyLedger',
+    image: '/images/SkyLedger.png',
+    codeLink: 'https://github.com/rajatk36/skyledger',
+    projectLink:'https://skyledger-one.vercel.app/'
+  },
+  {
+    title: 'Social Wavez',
+    image: '/images/SocialWavez.png',
+    codeLink: 'https://github.com/rajatk36/Social-Wavez',
+    projectLink:'https://social-wavez.vercel.app/'
+  },
+  {
     title: 'Spotify clone',
     image: '/images/spotify_clone.png',
     codeLink: 'https://github.com/rajatk36/Spotify-Clone',
